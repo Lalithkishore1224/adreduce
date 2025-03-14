@@ -456,7 +456,7 @@
             showLoadingSpinner();
             document.getElementById('videoPlayer').src = embedUrl;
 
-            // Add to history
+          
             addToHistory(input, channelId);
         }
 
@@ -589,7 +589,7 @@
 
      
 
-        // Fullscreen handling
+       
         document.addEventListener('keydown', (e) => {
             if (e.key === 'f') {
                 const iframe = document.getElementById('videoPlayer');
@@ -634,7 +634,7 @@ function toggleChat() {
             chatWindow.style.display = chatWindow.style.display === 'none' ? 'flex' : 'none';
         }
 
-        // Function to generate a bot response based on user input
+      
         function getBotResponse(userMessage) {
             const lowerCaseMessage = userMessage.toLowerCase();
 
@@ -665,21 +665,20 @@ function toggleChat() {
                 userMessage.textContent = chatInput.value;
                 chatBody.appendChild(userMessage);
 
-                // Generate bot response
+              
                 const botResponse = getBotResponse(chatInput.value);
 
-                // Add bot response
                 setTimeout(() => {
                     const botMessage = document.createElement('div');
                     botMessage.className = 'message bot-message';
                     botMessage.textContent = botResponse;
                     chatBody.appendChild(botMessage);
 
-                    // Scroll to the bottom of the chat
+                   
                     chatBody.scrollTop = chatBody.scrollHeight;
                 }, 500);
 
-                // Clear input
+                
                 chatInput.value = '';
             }
         }
